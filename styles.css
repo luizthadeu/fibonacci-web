@@ -20,7 +20,9 @@ body
 
 .content {
   min-width: 600px;
-  position: absolute;
+  position: sticky;
+  top:0px;
+  left: 0px;
   display: flex;
   justify-content: flex-start;
   align-items: center ;
@@ -77,9 +79,19 @@ body
   width: calc(var(--controls-height) * 2.5);
 }
 
+.view {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100% - var(--offsetTop));
+  overflow:scroll;
+  top: var(--offsetTop);
+}
+
 .result {
   position: relative;
-  top: var(--offsetTop);
   height: var(--content-height);
   width: var(--content-width);
 }

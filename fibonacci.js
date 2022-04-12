@@ -55,7 +55,7 @@ const doFibonacci = () => {
 
   sequency.style.setProperty("--content-height", height * amplify + 'px');
   sequency.style.setProperty("--content-width", width * amplify + 'px');
-  sequency.style.setProperty("--offsetTop", offsetTop + 'px');
+  document.body.style.setProperty("--offsetTop", offsetTop + 'px');
 
 
   labelFibonacci.textContent = fibonacci.map(element=>maskNumber(element)).join(", ");
