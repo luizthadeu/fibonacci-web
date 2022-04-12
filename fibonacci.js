@@ -50,6 +50,14 @@ const doFibonacci = () => {
     sequency.appendChild(buildSequenciLi(number, fibonacciPos[`${index}-${number}`], index/invertFibonacci.length));
   };
 
+  const height =  (invertFibonacci[0] | 0)
+  const width = height + (invertFibonacci[1] | 0);
+
+  sequency.style.setProperty("--content-height", height * amplify + 'px');
+  sequency.style.setProperty("--content-width", width * amplify + 'px');
+  sequency.style.setProperty("--offsetTop", offsetTop + 'px');
+
+
   labelFibonacci.textContent = fibonacci.map(element=>maskNumber(element)).join(", ");
 }
 
@@ -67,7 +75,7 @@ const buildSequenciLi = (element, fibonacciPos, hue) => {
   elmHtml.style.setProperty("--transform",  fibonacciPos.transform);
   elmHtml.style.setProperty("position",  `absolute`);
   elmHtml.style.setProperty("left",  `${fibonacciPos.x*amplify}px`);
-  elmHtml.style.setProperty("top",  `${(fibonacciPos.y*amplify)+offsetTop}px`);
+  elmHtml.style.setProperty("top",  `${(fibonacciPos.y*amplify)}px`);
   elmHtml.addEventListener("click", ()=>{
     sequency.classList.toggle("show");
   });
