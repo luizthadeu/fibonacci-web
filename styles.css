@@ -70,6 +70,7 @@ body
 
 .controls input {
   text-align: center;
+  width: calc(var(--controls-height) * 2.5);
 }
 
 .result {
