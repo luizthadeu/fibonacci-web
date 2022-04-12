@@ -126,4 +126,9 @@ const getXandY = (xa, ya, ta, t, index) => {
   return {x, y, transform};
 }
 
+const accumulateValue = (accumulator) =>{
+  iterations.value = (parseInt(iterations.value) | 0) + accumulator;
+  doFibonacci();
+}
+
 doFibonacci();

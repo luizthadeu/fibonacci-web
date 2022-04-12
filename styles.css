@@ -4,6 +4,7 @@
 {
   margin: 0;
   padding: 0;
+  --controls-height: 25px;
  
 }
 body 
@@ -25,16 +26,50 @@ body
   background: #414144;
   padding: 0px;
   border: 3px solid #091921;
-  
+}
+
+.acc-button {
+  height: var(--controls-height);
+  width: var(--controls-height);
+  border: 1px solid #091921;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.acc-button::before {
+  content: var(--title);
+  font-family: 'FontAwesome';
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  font-size: calc(var(--controls-height) );
+  top: 0px;
+  left: 0px;
+  width: calc(var(--controls-height) - 2px);
+  height: calc(var(--controls-height) - 2px);
+  font-weight: 500;
+  /* border-radius: 50%;
+  background: red; */
 }
 
 .controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--controls-height) * 1.15);
   margin: 6px;
+  gap: 10px;
 }
 
 .controls * {
-  min-height: 25px;
+  min-height: var(--controls-height);
   font-family: 'Montserrat', sans-serif;
+}
+
+.controls input {
+  text-align: center;
 }
 
 .result {
@@ -46,7 +81,9 @@ body
 
 .result.show * {
   background: hsl(var(--hue),100%,73%);
+  box-shadow:none;
 }
+
 .result * {
   display: flex;
   justify-content: center;
@@ -55,10 +92,7 @@ body
   min-height: var(--t);
   color:  hsl(var(--hue),100%,20%);
   font-size: calc(var(--t) / 3);
-  outline-color:hsl(var(--hue),100%,30%);
-  outline-width: 0.1px;
-  outline-offset:-0.1px;
-  outline-style: solid;
+  box-shadow: 0px 0px calc(var(--t) * 2) inset hsl(var(--hue),100%,30%);
   cursor:pointer;
   font-weight: 100;
   overflow: hidden;
