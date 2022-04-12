@@ -15,9 +15,11 @@ body
   min-height: 100vh;
   background: #222227;
   font-family: 'Montserrat', sans-serif;
+  min-width: 600px;
 }
 
 .content {
+  min-width: 600px;
   position: absolute;
   display: flex;
   justify-content: flex-start;
@@ -31,7 +33,7 @@ body
 .acc-button {
   height: var(--controls-height);
   width: var(--controls-height);
-  border: 1px solid #091921;
+  border: 0px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -59,6 +61,7 @@ body
   justify-content: center;
   align-items: center;
   height: calc(var(--controls-height) * 1.15);
+  width: 100%;
   margin: 6px;
   gap: 10px;
 }
@@ -123,12 +126,18 @@ body
   color: azure;
   font-size: medium;
   font-weight: 500;
+  width: 100%;
 }
 
 .number {
+  color:  hsl(var(--hue),100%,95%);
+  text-shadow: 0px 0px calc(var(--t) * 2) hsl(var(--hue),100%,25%);;
   z-index: 10;
 }
 
 .result.show > * > .number {
+  color:  hsl(var(--hue),100%,25%);
+  text-shadow: 0px 0px calc(var(--t) * 2) hsl(var(--hue),100%,95%);
   font-size: calc(var(--t) / 5);
+
 }

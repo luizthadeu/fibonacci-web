@@ -6,7 +6,7 @@ const iterations = document.getElementById('iterations');
 const sequency = document.getElementById('sequency');
 const labelFibonacci = document.getElementById('label-fibonacci');
 
-const amplify = Math.max((parseInt(params.zoom) || 1), 1);
+let amplify = Math.max((parseInt(params.zoom) || 1), 1);
 
 const offsetTop = 50;
 
@@ -128,6 +128,11 @@ const getXandY = (xa, ya, ta, t, index) => {
 
 const accumulateValue = (accumulator) =>{
   iterations.value = (parseInt(iterations.value) | 0) + accumulator;
+  doFibonacci();
+}
+
+const setZoom = (accumulator) =>{
+  amplify = Math.max((parseInt(amplify + accumulator) || 1), 1);
   doFibonacci();
 }
 
