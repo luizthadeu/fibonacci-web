@@ -8,8 +8,6 @@ const labelFibonacci = document.getElementById('label-fibonacci');
 
 let amplify = Math.max((parseInt(params.zoom) || 1), 1);
 
-const offsetTop = 50;
-
 const doFibonacci = () => {
   let numInterations = parseInt(iterations.value) || 3;
 
@@ -55,8 +53,6 @@ const doFibonacci = () => {
 
   sequency.style.setProperty("--content-height", height * amplify + 'px');
   sequency.style.setProperty("--content-width", width * amplify + 'px');
-  document.body.style.setProperty("--offsetTop", offsetTop + 'px');
-
 
   labelFibonacci.textContent = fibonacci.map(element=>maskNumber(element)).join(", ");
 }
